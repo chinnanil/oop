@@ -12,4 +12,4 @@ class Account:
             self.balance-=amount
             return self.balance
         else :
-            return "insufficient balance"
+            return "insufficient blance"
