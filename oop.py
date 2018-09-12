@@ -12,4 +12,14 @@ class Account:
             self.balance-=amount
             return self.balance
         else :
-            return "insufficient blance"
+
+            return "insufficient balance"
+a=Account("anil")
+a.deposit(500)
+class Savings(Account):
+    interest=0.5
+    def __init__(self,holder):
+        Account.__init__(self,holder)
+save=Savings("ipsi")
+print(save.holder)
+
