@@ -1,5 +1,5 @@
 class Account:
-    interest = 0.01
+    interest = 0.02
     def __init__(self,holder):
         self.holder=holder
         self.balance=0
@@ -17,4 +17,11 @@ class Account:
 a=Account("anil")
 a.deposit(500)
 
+class CheckingAccount(Account,Bank):
+    interest = 0.01
+    withdraw_fee = 1
+    def withdraw(self, amount):
+        return super().withdraw(amount+CheckingAccount.withdraw_fee)
 
+ch=CheckingAccount("ipsi")
+print(ch.withdraw(200))
